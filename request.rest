@@ -1,0 +1,4 @@
+GET http://localhost:3001/products/5e67c7422b7ba30ba42c7942
+
+###
+GET http://localhost:3001/products
