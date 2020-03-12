@@ -11,8 +11,8 @@ export const getAllProducts = () =>dispatch =>{
     })
     .catch(err => console.log(err))
 }
-export const getProduct = _id => dispatch =>{
-  Axios.get(`http://localhost:3001/products/${_id}`)
+export const getProduct = id => dispatch =>{
+  Axios.get(`http://localhost:3001/products/${id}`)
     .then(result=>{
       dispatch({
         type: GET_PRODUCT,

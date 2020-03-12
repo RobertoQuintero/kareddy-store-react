@@ -14,14 +14,14 @@ const ProductList = ({products,product}) => {
   return (
     <div className="py-5">
       <div className="container">
-        <Title name='our' title='products'/>
+        <Title name='Nuestros' title='Productos'/>
         <div className="row">
           {
             products &&
-            products.map(p => <Product name={p.name} price={p.price} img={p.image} inCart={false} key={p._id} id={p._id}/>)
-            
+            products.map(p => <Product name={p.name} price={p.price} img={p.image} inCart={false} key={p.id} id={p.id}/>)
+            // products.map(p=> <Product props={p}/>)
           }
-          {console.log(product)}
+         
         </div>
       </div>
     </div>

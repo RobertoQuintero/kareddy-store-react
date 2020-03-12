@@ -6,13 +6,12 @@ import ProductDescription from './Pages/ProductDescription'
 import Cart from './Pages/Cart'
 import Page404 from './Pages/Page404';
 
-
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path='/' component={()=> <ProductList />}/>
-        <Route path='/descripcion' component={()=><ProductDescription />} />
+        <Route exact path='/' component={ProductList}/>
+        <Route path='/products/:id' component={ProductDescription}/>
         <Route path='/carrito' component={()=> <Cart />} />
 
         <Route component={Page404}/>
