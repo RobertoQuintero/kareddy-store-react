@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import store from '../../Redux/store'
-import { getProduct } from '../../Redux/actionsCreators'
+import { getProduct, addToCart, manageModal } from '../../Redux/actionsCreators'
+import { Link} from 'react-router-dom'
 
-const ProductDescription = ({product,match}) => {
+const ProductDescription = ({product,match,cart,addProductToCart,openModal}) => {
  
   useEffect(()=>{
     store.dispatch(getProduct(`${match.params.id}`))
@@ -13,7 +14,7 @@ const ProductDescription = ({product,match}) => {
   return (
     <>
     {
-      product &&
+      product && cart &&
       <div className="container py-5">
       <div className="row">
         <div className="col-10 mx-auto text-center text-slanted text-blue my-5">
@@ -41,18 +42,20 @@ const ProductDescription = ({product,match}) => {
           </p>
           <p className="text-muted lead">{product.description}</p>
           <div>
-            {/* <Link to='/'>
-              <Button>
-                back to products
-              </Button>
+            <Link to='/'>
+              <button className="button">
+                Productos
+              </button>
             </Link>
-            <Button
-            disabled={ inCart ? true : false }
-            onClick={()=>{ }}
-            cart
-            >
-              {inCart ? 'in cart': 'add to cart'}
-            </Button> */}
+            {
+              cart.find(p => p.id === product.id)
+                ? <button className="button">Agregado</button>
+                : <button className="button" onClick={()=>{
+                  addProductToCart(product)
+                  openModal(product)
+                 }}>Agregar al Carrito</button>
+            }
+            
           </div>
         </div>
       </div>
@@ -63,8 +66,17 @@ const ProductDescription = ({product,match}) => {
 }
 
 const mapStateToProps = state =>({
-  product: state.productsReducer.product
+  product: state.productsReducer.product,
+  cart: state.cartReducer.cart
+})
+const mapDispatchToProps = dispatch =>({
+  addProductToCart(product){
+    dispatch(addToCart(product))
+  },
+  openModal(product){
+    dispatch(manageModal(product))
+  }
 })
 
-export default connect(mapStateToProps,{})(ProductDescription)
+export default connect(mapStateToProps,mapDispatchToProps)(ProductDescription)
 

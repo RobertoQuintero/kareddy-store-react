@@ -18,14 +18,14 @@ const CartTotals=({cart,clearAllProducts})=> {
           <div className="col-10 mt-2 mb-sm-5 ml-md-auto col-sm-8 text-capitalize text-right">
               <Link to="/">
               <button className="btn btn-outline-danger text-uppercase mb-3 px-5" type='button'
-               onClick={()=> clearAllProducts()}>clear cart</button>
+               onClick={()=> clearAllProducts()}>vaciar carrito</button>
               </Link>
             <h5>
               <span className="text-title">subtotal: </span>
               <strong>$ {subtotal}</strong>
             </h5>
             <h5>
-              <span className="text-title">tax: </span>
+              <span className="text-title">IVA: </span>
               <strong>$ {tax}</strong>
             </h5>
             <h5>

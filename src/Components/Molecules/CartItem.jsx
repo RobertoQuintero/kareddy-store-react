@@ -20,7 +20,7 @@ export const CartItem = ({name,price,image,id,removeProduct})=> {
       </div>
       <div className="col-10 mx-auto col-lg-2">
         <span className="d-lg-none">price: </span>  
-        {price}
+        $ {price}.00 MXN
       </div>
       <div className="col-10 mx-auto col-lg-2 my-lg-0">
         <div className="d-flex justify-content-center">

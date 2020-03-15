@@ -12,7 +12,7 @@ export const CartList= ({cart})=> {
                     key={item.id}
                     name= {item.name}
                     price={item.price}
-                    image = {item.img}
+                    image = {item.image}
                     id={item.id}
                   />
         })

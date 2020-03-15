@@ -1,4 +1,4 @@
-import { GET_ALL_PRODUCTS, GET_PRODUCT, ADD_TO_CART, CLEAR_CART, REMOVE_FROM_CART } from "./actions"
+import { GET_ALL_PRODUCTS, GET_PRODUCT, ADD_TO_CART, CLEAR_CART, REMOVE_FROM_CART, MANAGE_MODAL } from "./actions"
 
 export const productsReducer = (state={},action) =>{
   if(action.type === GET_ALL_PRODUCTS){
@@ -38,6 +38,20 @@ export const cartReducer = (state=initialCart,action)=>{
     return {
       ...state,
       cart: []
+    }
+  }
+  return state
+}
+const initialModal = {
+  modal:false,
+  product: []
+}
+export const modalReducer = (state=initialModal,action)=>{
+  if(action.type === MANAGE_MODAL){
+    return {
+      ...state,
+      modal:!state.modal,
+      product: action.product
     }
   }
   return state

@@ -17,7 +17,7 @@ const ProductList = ({products}) => {
         <div className="row">
           {
             products &&
-            products.map(p => <Product name={p.name} price={p.price} img={p.image} inCart={false} key={p.id} id={p.id}/>)
+            products.map(p => <Product name={p.name} price={p.price} image={p.image} inCart={false} key={p.id} id={p.id}/>)
           }
          
         </div>

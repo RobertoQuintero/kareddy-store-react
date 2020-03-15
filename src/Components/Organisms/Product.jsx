@@ -1,28 +1,30 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
-import { addToCart } from '../../Redux/actionsCreators'
+import { addToCart, manageModal } from '../../Redux/actionsCreators'
 
-const Product = ({img,cart,name,price,id,addProductToCart}) => {
+const Product = ({image,cart,name,price,id,addProductToCart,openModal}) => {
   const product = {
-    img,name,price,id
+    image,name,price,id
   }
   return (
     <div className='col-9 mx-auto col-md-6 col-lg-3 my-3 wrapper'>
         <div className="card">
-          <div className="img-container p-5" onClick={()=> { }}>
+          <div className="img-container p-5" >
           <Link to={`/products/${id}`}>
-            <img src={img} alt="product"className='card-img-top'/>
+            <img src={image} alt="product" className='card-img-top'/>
           </Link>
-          <button 
-            className='cart-btn' 
-            onClick={()=> addProductToCart(product) }>
-            {
-              cart.find(p => p.id === id) 
-              ? 'Agregado'
-              : (<i className='fas fa-cart-plus'></i>)
-            }
-          </button>
+          {
+            cart.find(el => el.id === id)
+              ? <button className="cart-btn">Agregado</button>
+              : <button 
+                  className='cart-btn' 
+                  onClick={()=>{
+                    addProductToCart(product)
+                    openModal(product)
+                  } }><i className='fas fa-cart-plus'></i>
+                </button>
+          }
         </div>
       <div className="card-footer d-flex justify-content-between">
         <p className="align-self-center mb-0">
@@ -45,6 +47,9 @@ const mapStateToProps = state =>({
 const mapDispatchToProps = dispatch =>({
   addProductToCart(product){
     dispatch(addToCart(product))
+  },
+  openModal(product){
+    dispatch(manageModal(product))
   }
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Product)

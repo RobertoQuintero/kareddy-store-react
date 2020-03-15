@@ -3,13 +3,15 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import {
   productsReducer,
-  cartReducer
+  cartReducer,
+  modalReducer
 } from './reducers'
 
 export default createStore(
   combineReducers({
     productsReducer,
-    cartReducer
+    cartReducer,
+    modalReducer
   }),
   composeWithDevTools(applyMiddleware(thunk))
 )

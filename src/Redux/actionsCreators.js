@@ -1,5 +1,5 @@
 import Axios from "axios"
-import {GET_ALL_PRODUCTS, GET_PRODUCT, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART} from './actions'
+import {GET_ALL_PRODUCTS, GET_PRODUCT, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, MANAGE_MODAL} from './actions'
 
 export const getAllProducts = () =>dispatch =>{
   Axios.get(`http://localhost:3001/products`)
@@ -34,4 +34,9 @@ export const removeFromCart = id =>({
 
 export const clearCart = () =>({
   type: CLEAR_CART
+})
+
+export const manageModal = product => ({
+  type: MANAGE_MODAL,
+  product
 })
