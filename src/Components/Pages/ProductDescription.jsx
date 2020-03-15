@@ -8,13 +8,12 @@ const ProductDescription = ({product,match,cart,addProductToCart,openModal}) => 
  
   useEffect(()=>{
     store.dispatch(getProduct(`${match.params.id}`))
-    return ()=>{
-    }
+
   },[match])
   return (
     <>
     {
-      product && cart &&
+      product &&
       <div className="container py-5">
       <div className="row">
         <div className="col-10 mx-auto text-center text-slanted text-blue my-5">

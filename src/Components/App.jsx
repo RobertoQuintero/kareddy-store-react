@@ -6,7 +6,6 @@ import ProductDescription from './Pages/ProductDescription'
 import Cart from './Pages/Cart'
 import Page404 from './Pages/Page404';
 import MainMenu from './Organisms/MainMenu'
-// import Modal from './Organisms/Modal';
 import OpenModal from './Molecules/OpenModal'
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
         <Route component={Page404}/>
       </Switch>
       <OpenModal />
-      {/* <Modal /> */}
     </Router>
   );
 }

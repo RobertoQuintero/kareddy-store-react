@@ -8,7 +8,7 @@ const MainMenu = ({cart}) => {
     return (
       <div className='navbar navbar-expand-sm navbar-dark px-sm-5 navWrapper'>
         <Link to='/'>
-          <h1 className="navbar-brand">Store</h1>
+          <h1 className="navbar-brand">Kareddy Store</h1>
         </Link>
         <ul className="navbar-nav align-items-center">
           <li className="nav-item ml-5"><NavLink to="/" className="nav-link">Products</NavLink></li>
