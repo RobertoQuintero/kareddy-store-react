@@ -7,6 +7,8 @@ const ProductDescription = ({product,match}) => {
  
   useEffect(()=>{
     store.dispatch(getProduct(`${match.params.id}`))
+    return ()=>{
+    }
   },[match])
   return (
     <>

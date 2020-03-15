@@ -5,10 +5,12 @@ import ProductList from './Pages/ProductList'
 import ProductDescription from './Pages/ProductDescription'
 import Cart from './Pages/Cart'
 import Page404 from './Pages/Page404';
+import MainMenu from './Organisms/MainMenu'
 
 function App() {
   return (
     <Router>
+      <MainMenu />
       <Switch>
         <Route exact path='/' component={ProductList}/>
         <Route path='/products/:id' component={ProductDescription}/>

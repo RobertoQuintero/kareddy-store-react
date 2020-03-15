@@ -1,8 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { addToCart } from '../../Redux/actionsCreators'
 
-const Product = ({img,inCart,name,price,id}) => {
-  
+const Product = ({img,cart,name,price,id,addProductToCart}) => {
+  const product = {
+    img,name,price,id
+  }
   return (
     <div className='col-9 mx-auto col-md-6 col-lg-3 my-3 wrapper'>
         <div className="card">
@@ -12,13 +16,11 @@ const Product = ({img,inCart,name,price,id}) => {
           </Link>
           <button 
             className='cart-btn' 
-            disabled={inCart ? true : false} 
-            onClick={()=>{ }}>
+            onClick={()=> addProductToCart(product) }>
             {
-              inCart ? <p className='text-capitalize mb-0' disabled>
-              {' '}
-              in Cart
-            </p>: (<i className='fas fa-cart-plus'></i>)
+              cart.find(p => p.id === id) 
+              ? 'Agregado'
+              : (<i className='fas fa-cart-plus'></i>)
             }
           </button>
         </div>
@@ -36,4 +38,13 @@ const Product = ({img,inCart,name,price,id}) => {
   )
 }
 
-export default Product
+const mapStateToProps = state =>({
+  cart: state.cartReducer.cart
+})
+
+const mapDispatchToProps = dispatch =>({
+  addProductToCart(product){
+    dispatch(addToCart(product))
+  }
+})
+export default connect(mapStateToProps,mapDispatchToProps)(Product)
