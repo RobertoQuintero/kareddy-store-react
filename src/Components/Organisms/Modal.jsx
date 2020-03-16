@@ -14,15 +14,15 @@ const Modal = ({closeModal,product}) => {
               <div id='modal' className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize p-5">
                 <h5>producto agregado</h5>
                 <img src={product.image} alt={product.name} className='img-fluid'/>
-                <h5>{product.name}</h5>
+                <h5 className="pt-3">{product.name}</h5>
                 <h5 className="text-muted">precio : $ {product.price}</h5>
                 <Link to='/'>
-                  <div className="button" onClick={()=> closeModal()}>
+                  <button className="button" onClick={()=> closeModal()}>
                     productos
-                  </div>
+                  </button>
                 </Link>
                 <Link to='/carrito'>
-                  <button className="button" onClick={()=>closeModal()}>
+                  <button className="button yellow" onClick={()=>closeModal()}>
                     ir al carrito
                   </button>
                 </Link>

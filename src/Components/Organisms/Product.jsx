@@ -16,7 +16,7 @@ const Product = ({image,cart,name,price,id,addProductToCart,openModal}) => {
           </Link>
           {
             cart.find(el => el.id === id)
-              ? <button className="cart-btn">Agregado</button>
+              ? <button className="cart-btn btn-y">Agregado</button>
               : <button 
                   className='cart-btn' 
                   onClick={()=>{

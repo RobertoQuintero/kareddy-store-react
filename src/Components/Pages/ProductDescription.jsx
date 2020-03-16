@@ -48,7 +48,7 @@ const ProductDescription = ({product,match,cart,addProductToCart,openModal}) => 
             </Link>
             {
               cart.find(p => p.id === product.id)
-                ? <button className="button">Agregado</button>
+                ? <button className="button yellow">Agregado</button>
                 : <button className="button" onClick={()=>{
                   addProductToCart(product)
                   openModal(product)

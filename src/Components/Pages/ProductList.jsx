@@ -11,7 +11,7 @@ const ProductList = ({products}) => {
     store.dispatch(getAllProducts())
   },[])
   return (
-    <div className="py-5">
+    <div className="py-5 gradient">
       <div className="container">
         <Title name='Nuestros' title='Productos'/>
         <div className="row">

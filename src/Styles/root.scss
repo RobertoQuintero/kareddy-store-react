@@ -5,12 +5,19 @@
   --mainDark: #232528;
   --mainYellow: #ffa400;
 }
-
+*,
+::after,
+::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body{
   font-family: 'Oswald','sans-serif';
   background-color: var(--mainWhite);
   color: var(--mainDark)
 }
+
 
 .text-title{
   font-family: 'Permanent Marker',cursive;
@@ -44,4 +51,24 @@ body{
   cursor: pointer;
   font-size: 1.2rem;
   color: var(--mainYellow);
+}
+
+.button.yellow{
+  color: var(--mainYellow);
+  border: 1px solid var(--mainYellow);
+
+  &:hover{
+    background-color: var(--mainYellow);
+    color: var(--mainWhite)
+  }
+}
+.cart-btn.btn-y{
+  background-color: var(--mainYellow);
+}
+
+.gradient{
+  background: #A770EF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
