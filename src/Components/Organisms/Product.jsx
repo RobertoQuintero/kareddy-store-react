@@ -3,10 +3,11 @@ import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { addToCart, manageModal } from '../../Redux/actionsCreators'
 
-const Product = ({image,cart,name,price,id,addProductToCart,openModal}) => {
+const Product = ({products,image,cart,name,price,id,addProductToCart,openModal}) => {
   const product = {
     image,name,price,id
   }
+  console.log(products)
   return (
     <div className='col-9 mx-auto col-md-6 col-lg-3 my-3 wrapper'>
         <div className="card">
@@ -15,12 +16,12 @@ const Product = ({image,cart,name,price,id,addProductToCart,openModal}) => {
             <img src={image} alt="product" className='card-img-top'/>
           </Link>
           {
-            cart.find(el => el.id === id)
+            cart.find(el => el._id === id)
               ? <button className="cart-btn btn-y">Agregado</button>
               : <button 
                   className='cart-btn' 
                   onClick={()=>{
-                    addProductToCart(product)
+                    addProductToCart(products)
                     openModal(product)
                   } }><i className='fas fa-cart-plus'></i>
                 </button>
@@ -41,7 +42,7 @@ const Product = ({image,cart,name,price,id,addProductToCart,openModal}) => {
 }
 
 const mapStateToProps = state =>({
-  cart: state.cartReducer.cart
+  cart: state.cartReducer.cart,
 })
 
 const mapDispatchToProps = dispatch =>({

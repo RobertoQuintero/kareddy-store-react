@@ -2,17 +2,18 @@ import Axios from "axios"
 import {GET_ALL_PRODUCTS, GET_PRODUCT, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, MANAGE_MODAL} from './actions'
 
 export const getAllProducts = () =>dispatch =>{
-  Axios.get(`http://localhost:3001/products`)
+  Axios.get('https://kareddy-store.herokuapp.com/jsonProducts' || `http://localhost:3001/products`)
     .then(result=>{
+      console.log(result.data.products)
       dispatch({
         type: GET_ALL_PRODUCTS,
-        products: result.data
+        products: result.data.products
       })
     })
     .catch(err => console.log(err))
 }
 export const getProduct = id => dispatch =>{
-  Axios.get(`http://localhost:3001/products/${id}`)
+  Axios.get(`https://kareddy-store.herokuapp.com/jsonProducts/${id}`)
     .then(result=>{
       dispatch({
         type: GET_PRODUCT,
