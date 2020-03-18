@@ -11,7 +11,7 @@ const MainMenu = ({cart}) => {
           <h1 className="navbar-brand mb-0">Kareddy Store</h1>
         </Link>
         <ul className="navbar-nav" >
-          <li className="nav-item ml-5 "><NavLink to="/" className="nav-link ">Products</NavLink></li>
+          <li className="nav-item ml-5 "><NavLink to="/" className="nav-link ">Productos</NavLink></li>
         </ul>
         <Link to='/carrito' className='ml-auto'>
           <button className="button">

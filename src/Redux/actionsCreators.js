@@ -2,7 +2,6 @@ import Axios from "axios"
 import {GET_ALL_PRODUCTS, GET_PRODUCT, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, MANAGE_MODAL} from './actions'
 
 export const getAllProducts = () =>dispatch =>{
-  console.log(process.env.REACT_APP_API_URL)
   Axios.get(`${process.env.REACT_APP_API_URL}` || `http://localhost:3001/products`)
     .then(result=>{
 

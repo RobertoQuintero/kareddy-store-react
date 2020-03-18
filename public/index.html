@@ -5,20 +5,38 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Kareddy Store en Poza Rica"/>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kareddy Store">
+    <meta property="og:description" content="Kareddy Store - Catálogo de bolsas para dama">
+    <meta property="og:url" content="https://kareddystore.now.sh/">
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/kareddy-store.appspot.com/o/img-bolsas%2Fimg-12.png?alt=media&token=ee353207-daaf-46eb-94aa-dfade8dcee96">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-   
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link href="https://fonts.googleapis.com/css?family=Oswald|Permanent+Marker&display=swap" rel="stylesheet">
     <!-- font awasome -->
     <script src="https://kit.fontawesome.com/b8ea86f846.js" crossorigin="anonymous"></script>
-   
-    <title>React App</title>
+    <title>Kareddy Store</title>
+    <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "WebSite",
+        "name": "kareddystore",
+        "alternateName": "kareddystore",
+        "url": "https://kareddystore.now.sh/"
+      }
+       </script>
   </head>
   <body>
+    <script>
+     
+        if(performance.navigation.type == 1){
+          window.location.href = 'https://kareddystore.now.sh'
+          // console.log(window.location) 
+          // window.location.pathname = '/'
+        }
+  
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>

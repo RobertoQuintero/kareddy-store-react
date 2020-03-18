@@ -7,7 +7,6 @@ const Product = ({products,image,cart,name,price,id,addProductToCart,openModal})
   const product = {
     image,name,price,id
   }
-  console.log(products)
   return (
     <div className='col-9 mx-auto col-md-6 col-lg-3 my-3 wrapper'>
         <div className="card">
