@@ -16,7 +16,6 @@ function App() {
         <Route exact path='/' component={ProductList}/>
         <Route path='/products/:id' component={ProductDescription}/>
         <Route path='/carrito' component={()=> <Cart />} />
-
         <Route component={Page404}/>
       </Switch>
       <OpenModal />
